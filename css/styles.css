@@ -1,5 +1,5 @@
 body {
-	text-align: center;
+  text-align: center;
 }
 
 .row {
@@ -7,10 +7,28 @@ body {
 }
 
 .circle {
-	border-radius: 100%;
-	border: 2px solid hotpink;
-	height: 150px;
-	width: 150px;
-	margin: 5px;
+  border-radius: 100%;
+  border: 2px solid hotpink;
+  height: 150px;
+  width: 150px;
+  margin: 5px;
 }
 
+.button {
+  margin: 15px;
+}
+
+.pop-up {
+  background-image: url("../images/mushroom.png");
+  background-size: 100%;
+  animation: popup 0.5s 1 alternate;
+}
+
+@keyframes popup {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
