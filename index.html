@@ -11,72 +11,82 @@
 
 <body>
 	<header>
-		<h1>Whack-A-Mole</h1>
+		<button class="music">music</button>
+		<h1>Super Mario</h1>
+		<h2>Whack-A-Mushroom</h2>
 	</header>
-	<div class="whackArea">
-		<div class="row">
-			<div class="border">
-				<div class="circle 1" data-number="1"></div>
+	<audio class="on-load" src="audio/Mario Kart 8 Theme Song.mp3" onload="onLoadAudio()"></audio>
+	<div class="container hidden">
+		<div class="aside">
+			<div class="scoreContainer">Score:
+				<span class="score">0</span>
 			</div>
-			<div class="border">
-				<div class="circle 2" data-number="2"></div>
-			</div>
-			<div class="border">
-				<div class="circle 3" data-number="3"></div>
-			</div>
-			<div class="border">
-				<div class="circle 4" data-number="4"></div>
+			<div class="livesContainer">
+				<div class="livesImage"></div>
+				<div class="times">X</div>
+				<span class="lives">5</span>
 			</div>
 		</div>
-		<div class="row">
-			<div class="border">
-				<div class="circle 5" data-number="5"></div>
+		<div class="whackArea">
+			<div class="row">
+				<div class="border">
+					<div class="circle 1" data-number="1"></div>
+				</div>
+				<div class="border">
+					<div class="circle 2" data-number="2"></div>
+				</div>
+				<div class="border">
+					<div class="circle 3" data-number="3"></div>
+				</div>
+				<div class="border">
+					<div class="circle 4" data-number="4"></div>
+				</div>
 			</div>
-			<div class="border">
-				<div class="circle 6" data-number="6"></div>
+			<div class="row">
+				<div class="border">
+					<div class="circle 5" data-number="5"></div>
+				</div>
+				<div class="border">
+					<div class="circle 6" data-number="6"></div>
+				</div>
+				<div class="border">
+					<div class="circle 7" data-number="7"></div>
+				</div>
+				<div class="border">
+					<div class="circle 8" data-number="8"></div>
+				</div>
 			</div>
-			<div class="border">
-				<div class="circle 7" data-number="7"></div>
+			<div class="row">
+				<div class="border">
+					<div class="circle 9" data-number="9"></div>
+				</div>
+				<div class="border">
+					<div class="circle 10" data-number="10"></div>
+				</div>
+				<div class="border">
+					<div class="circle 11" data-number="11"></div>
+				</div>
+				<div class="border">
+					<div class="circle 12" data-number="12"></div>
+				</div>
 			</div>
-			<div class="border">
-				<div class="circle 8" data-number="8"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="border">
-				<div class="circle 9" data-number="9"></div>
-			</div>
-			<div class="border">
-				<div class="circle 10" data-number="10"></div>
-			</div>
-			<div class="border">
-				<div class="circle 11" data-number="11"></div>
-			</div>
-			<div class="border">
-				<div class="circle 12" data-number="12"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="border">
-				<div class="circle 13" data-number="13"></div>
-			</div>
-			<div class="border">
-				<div class="circle 14" data-number="14"></div>
-			</div>
-			<div class="border">
-				<div class="circle 15" data-number="15"></div>
-			</div>
-			<div class="border">
-				<div class="circle 16" data-number="16"></div>
+			<div class="row">
+				<div class="border">
+					<div class="circle 13" data-number="13"></div>
+				</div>
+				<div class="border">
+					<div class="circle 14" data-number="14"></div>
+				</div>
+				<div class="border">
+					<div class="circle 15" data-number="15"></div>
+				</div>
+				<div class="border">
+					<div class="circle 16" data-number="16"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<button class="button">Start Game!</button>
-	<div class="aside">
-		<div class="scoreContainer">Score:
-			<span class="score"></span>
-		</div>
-	</div>
+	<button class="button start">Start Game!</button>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>

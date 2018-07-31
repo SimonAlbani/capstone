@@ -1,5 +1,15 @@
+@font-face {
+  font-family: mario;
+  src: url(../fonts/SuperMario256.ttf);
+}
+
 body {
   text-align: center;
+  font-family: mario;
+  color: #0000ff;
+  background-image: url(../images/backgroundimage.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .row {
@@ -8,27 +18,107 @@ body {
 
 .circle {
   border-radius: 100%;
-  border: 2px solid hotpink;
+  border: 2px solid #ff0000;
   height: 150px;
   width: 150px;
   margin: 5px;
 }
 
 .button {
-  margin: 15px;
+  font-family: mario;
+  background: none;
+  border: none;
+  color: #ff0000;
+  margin-top: 250px;
+  font-size: 50px;
+  animation: start 1s infinite alternate;
+}
+
+@keyframes start {
+  from {
+    font-size: 50px;
+  }
+  to {
+    font-size: 60px;
+  }
+}
+
+.pop-up,
+.angry-mushroom {
+  background-size: 100%;
+  animation: popup 0.5s 1 alternate;
+  background-repeat: no-repeat;
 }
 
 .pop-up {
   background-image: url("../images/mushroom.png");
-  background-size: 100%;
-  animation: popup 0.5s 1 alternate;
+}
+
+.angry-mushroom {
+  background-image: url("../images/angrymushroom.png");
 }
 
 @keyframes popup {
   from {
-    transform: rotate(0deg);
+    background-size: 0%;
+    /* background-repeat: no-repeat; */
   }
   to {
-    transform: rotate(360deg);
+    background-size: 100%;
   }
+}
+
+.livesImage {
+  background-image: url("../images/mariolives.jpg");
+  height: 100px;
+  width: 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.livesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.aside {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.times {
+  padding: 4px;
+}
+
+.scoreContainer {
+  padding-bottom: 50px;
+  font-size: 25px;
+}
+
+.whackArea {
+  margin-right: 150px;
+  cursor: url("../images/Normal\ Select.cur"), pointer;
+}
+
+h1 {
+  font-size: 75px;
+  -webkit-text-stroke-width: 5px;
+}
+
+h2 {
+	-webkit-text-stroke-width: 2px;
+}
+
+h1,
+h2 {
+  -webkit-text-fill-color: #0000ff;
+  -webkit-text-stroke-color: #ff0000;
+}
+
+.hidden {
+  display: none;
 }
