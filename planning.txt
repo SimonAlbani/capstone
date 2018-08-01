@@ -1,0 +1,24 @@
+Pseudo Code:
+1. have circles show up on dom
+2. have a function that will get the mole to show up in a random circle
+3. have the mole that showed up in that random circle dissapear
+4. if the user clicks the function the score goes up and the mole disapears
+5. if the user gets a certain amount of points the user wins
+6. if the user loses all lives the game is over and the user loses
+
+
+
+
+MVP
+user is able to click on randomly generated moles and gets points when he hits them
+
+Bronze
+theme the game to Mario
+
+Silver
+add another "mole" that shows up in a random hole that takes away Mario's lives
+add sounds for clicks on the different "moles", a song for when the page loads, and a win/lose
+
+Gold
+Have different levels for the user to go through with different speeds
+
