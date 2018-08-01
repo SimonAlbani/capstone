@@ -38,14 +38,17 @@ $(".circle").on("click", event => {
   }
 });
 
+//toggles the mushroom class
 function mushroomToggle(element) {
   element.toggleClass("mushroom");
 }
 
+//toggles the angry mushroom class
 function angryMushroomToggle(element) {
   element.toggleClass("angry-mushroom");
 }
 
+//when you click the start button the mushrooms toggle on the DOM and the array gets shuffled
 $(".start").on("click", () => {
   let shuffledArray = shuffle(circles);
   for (let i = 0; i < 10000; i++) {
@@ -55,8 +58,8 @@ $(".start").on("click", () => {
   }
 });
 
+//when you click the start button the angry mushrooms toggle on the DOM and the array gets shuffled
 $(".start").on("click", () => {
-  $(".on-load")[0].pause();
   let shuffledArray = shuffle(circles);
   for (let i = 0; i < shuffledArray.length; i++) {
     let circleDiv = $(`.${shuffledArray[i]}`);
@@ -65,24 +68,35 @@ $(".start").on("click", () => {
   }
 });
 
+//pauses the music that plays on load, displays the game board, and removes the start button and directions
 $(".start").on("click", () => {
+  $(".on-load")[0].pause();
   $(".container").removeClass("hidden");
   $(".game-begin").attr("class", "hidden");
 });
 
+//updates the DOM wit the score and lives
 function scoreKeeper(number) {
   $(".score").text(number);
   $(".lives").text(lives);
 }
 
+//checks the lives and score to see if the user won or lost
 function checkWinner() {
   if (lives === 0) {
     $(".outcome").text("You lose");
     $(".container").attr("class", "hidden");
+    $(".restart").removeClass("hidden");
     $(".lose")[0].play();
   } else if (lives > 0 && score === 10) {
     $(".outcome").text("You Win!");
     $(".container").attr("class", "hidden");
+    $(".restart").removeClass("hidden");
     $(".win")[0].play();
   }
 }
+
+//restarts the game
+$(".restart").on("click", () => {
+  location.reload();
+});

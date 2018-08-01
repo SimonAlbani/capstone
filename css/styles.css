@@ -61,7 +61,6 @@ body {
 @keyframes popup {
   from {
     background-size: 0%;
-    /* background-repeat: no-repeat; */
   }
   to {
     background-size: 100%;
@@ -115,7 +114,7 @@ h2 {
 
 h1,
 h2 {
-  -webkit-text-fill-color: #0000ff;
+  -webkit-text-fill-color: white;
   -webkit-text-stroke-color: #ff0000;
 }
 
@@ -133,7 +132,7 @@ p {
 }
 
 .outcome {
-	margin-top: 250px;
+  margin-top: 250px;
 }
 
 @media screen and (max-width: 480px) {
@@ -153,5 +152,4 @@ p {
     margin-right: 0px;
     margin-top: 200px;
   }
-
 }
