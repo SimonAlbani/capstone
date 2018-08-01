@@ -1,6 +1,7 @@
+//sets the array for the circles on the DOM
 const circles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-// let shuffledArray = shuffle(circles);
 
+//shuffles an array, some code obtained from stack overflow
 function shuffle(array) {
   var ctr = array.length,
     temp,
@@ -15,19 +16,21 @@ function shuffle(array) {
   return array;
 }
 
-// function randomCircleArray(array) {
-//   return array[Math.floor(Math.random() * array.length)];
-// }
+//sets the score and lives variables
+let score = 0;
+let lives = 5;
 
-score = 0;
-lives = 5;
+//when the user clicks on a a circle it checks wether or not you click on a mushroom or an angry mushroom
+// and adds points or removes lives accordingly
 $(".circle").on("click", event => {
-  if ($(event.target).hasClass("pop-up") === true) {
+  if ($(event.target).hasClass("mushroom") === true) {
+    $(".mushroom")[0].play();
     score++;
     scoreKeeper(score);
-    $(event.target).removeClass("pop-up");
+    $(event.target).removeClass("mushroom");
     checkWinner();
   } else if ($(event.target).hasClass("angry-mushroom") === true) {
+    $(".angry-mushroom")[0].play();
     lives--;
     scoreKeeper(score);
     $(event.target).removeClass("angry-mushroom");
@@ -35,8 +38,8 @@ $(".circle").on("click", event => {
   }
 });
 
-function popUpToggle(element) {
-  element.toggleClass("pop-up");
+function mushroomToggle(element) {
+  element.toggleClass("mushroom");
 }
 
 function angryMushroomToggle(element) {
@@ -47,12 +50,13 @@ $(".start").on("click", () => {
   let shuffledArray = shuffle(circles);
   for (let i = 0; i < 10000; i++) {
     let circleDiv = $(`.${shuffledArray[i]}`);
-    setTimeout(() => popUpToggle(circleDiv), i * 2000 + 2000);
-    setTimeout(() => popUpToggle(circleDiv), i * 3000 + 100);
+    setTimeout(() => mushroomToggle(circleDiv), i * 2000 + 2000);
+    setTimeout(() => mushroomToggle(circleDiv), i * 3000 + 100);
   }
 });
 
 $(".start").on("click", () => {
+  $(".on-load")[0].pause();
   let shuffledArray = shuffle(circles);
   for (let i = 0; i < shuffledArray.length; i++) {
     let circleDiv = $(`.${shuffledArray[i]}`);
@@ -63,7 +67,7 @@ $(".start").on("click", () => {
 
 $(".start").on("click", () => {
   $(".container").removeClass("hidden");
-  $(".start").attr("class", "hidden");
+  $(".game-begin").attr("class", "hidden");
 });
 
 function scoreKeeper(number) {
@@ -73,24 +77,12 @@ function scoreKeeper(number) {
 
 function checkWinner() {
   if (lives === 0) {
-    alert("You Loose");
+    $(".outcome").text("You lose");
     $(".container").attr("class", "hidden");
+    $(".lose")[0].play();
   } else if (lives > 0 && score === 10) {
-    alert("You Win!");
+    $(".outcome").text("You Win!");
     $(".container").attr("class", "hidden");
+    $(".win")[0].play();
   }
 }
-
-// $(".music").on("click", playMusic);
-
-function playMusic() {
-  console.log("hello");
-  $(".on-load")[0].play();
-}
-
-// $("body").load(function() {
-//   let onLoad = $(".on-load")[0];
-//   $(onLoad).play();
-// });
-$("document").ready(playMusic);
-// document.querySelector("body").addEventListener("load", playMusic());

@@ -8,8 +8,9 @@ body {
   font-family: mario;
   color: #0000ff;
   background-image: url(../images/backgroundimage.gif);
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: 100%;
+  height: 100%;
 }
 
 .row {
@@ -18,7 +19,7 @@ body {
 
 .circle {
   border-radius: 100%;
-  border: 2px solid #ff0000;
+  border: 4px solid #ff0000;
   height: 150px;
   width: 150px;
   margin: 5px;
@@ -29,28 +30,27 @@ body {
   background: none;
   border: none;
   color: #ff0000;
-  margin-top: 250px;
   font-size: 50px;
   animation: start 1s infinite alternate;
 }
 
 @keyframes start {
   from {
-    font-size: 50px;
+    font-size: 70px;
   }
   to {
-    font-size: 60px;
+    font-size: 85px;
   }
 }
 
-.pop-up,
+.mushroom,
 .angry-mushroom {
   background-size: 100%;
   animation: popup 0.5s 1 alternate;
   background-repeat: no-repeat;
 }
 
-.pop-up {
+.mushroom {
   background-image: url("../images/mushroom.png");
 }
 
@@ -110,7 +110,7 @@ h1 {
 }
 
 h2 {
-	-webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
 }
 
 h1,
@@ -121,4 +121,37 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.outcome {
+	margin-top: 250px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .circle {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+  }
+
+  .whackArea {
+    margin-right: 0px;
+    margin-top: 200px;
+  }
+
 }

@@ -11,11 +11,14 @@
 
 <body>
 	<header>
-		<button class="music">music</button>
 		<h1>Super Mario</h1>
 		<h2>Whack-A-Mushroom</h2>
 	</header>
-	<audio class="on-load" src="audio/Mario Kart 8 Theme Song.mp3" onload="onLoadAudio()"></audio>
+	<audio class="on-load" src="audio/mariothemesong.mp3" autoplay="true"></audio>
+	<audio src="audio/super_mario_coin_sms.mp3" class="mushroom"></audio>
+	<audio src="audio/super_mario_fireball.mp3" class="angry-mushroom"></audio>
+	<audio src="audio/super_mario_dies_sms.mp3" class="lose"></audio>
+	<audio src="audio/mario_end_level.mp3" class="win"></audio>
 	<div class="container hidden">
 		<div class="aside">
 			<div class="scoreContainer">Score:
@@ -86,7 +89,18 @@
 			</div>
 		</div>
 	</div>
-	<button class="button start">Start Game!</button>
+	<div class="game-begin">
+		<div class="instructions">
+			<p>click on the
+				<img src="images/mushroom.png" alt="red mushroom"> to gain points</p>
+			<p>get ten points to win!</p>
+			<p>Click on the
+				<img src="images/angrymushroom.png" alt="angry mushroom"> and you lose lives</p>
+			<p>lose all lives and you lose the game</p>
+		</div>
+		<button class="button start">Start Game!</button>
+	</div>
+	<div class="outcome button"></div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
