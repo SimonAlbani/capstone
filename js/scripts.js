@@ -1,9 +1,11 @@
+"use strict";
+
 //sets the array for the circles on the DOM
 const circles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
-//shuffles an array, some code obtained from stack overflow
+//shuffles an array, some code obtained from stack w3resource https://www.w3resource.com/javascript-exercises/javascript-array-exercise-17.php
 function shuffle(array) {
-  var ctr = array.length,
+  let ctr = array.length,
     temp,
     index;
   while (ctr > 0) {
@@ -37,6 +39,37 @@ $(".circle").on("click", event => {
     checkWinner();
   }
 });
+
+//updates the DOM wit the score and lives
+function scoreKeeper(number) {
+  $(".score").text(number);
+  $(".lives").text(lives);
+}
+
+//checks the lives and score to see if the user won or lost
+function checkWinner() {
+  if (lives === 0) {
+    youLose();
+  } else if (lives > 0 && score === 10) {
+    youWin();
+  }
+}
+
+//if the use loses the game board hides and the message "you lose" apears and sound plays
+function youLose() {
+  $(".outcome").text("You lose");
+  $(".container").attr("class", "hidden");
+  $(".restart").removeClass("hidden");
+  $(".lose")[0].play();
+}
+
+//if the use loses the game board hides and the message "you win" apears and sound plays
+function youWin() {
+  $(".outcome").text("You Win!");
+  $(".container").attr("class", "hidden");
+  $(".restart").removeClass("hidden");
+  $(".win")[0].play();
+}
 
 //toggles the mushroom class
 function mushroomToggle(element) {
@@ -74,35 +107,6 @@ $(".start").on("click", () => {
   $(".container").removeClass("hidden");
   $(".game-begin").attr("class", "hidden");
 });
-
-//updates the DOM wit the score and lives
-function scoreKeeper(number) {
-  $(".score").text(number);
-  $(".lives").text(lives);
-}
-
-//checks the lives and score to see if the user won or lost
-function checkWinner() {
-  if (lives === 0) {
-    youLose();
-  } else if (lives > 0 && score === 10) {
-    youWin();
-  }
-}
-
-function youLose() {
-  $(".outcome").text("You lose");
-  $(".container").attr("class", "hidden");
-  $(".restart").removeClass("hidden");
-  $(".lose")[0].play();
-}
-
-function youWin() {
-  $(".outcome").text("You Win!");
-  $(".container").attr("class", "hidden");
-  $(".restart").removeClass("hidden");
-  $(".win")[0].play();
-}
 
 //restarts the game
 $(".restart").on("click", () => {
