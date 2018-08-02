@@ -84,16 +84,24 @@ function scoreKeeper(number) {
 //checks the lives and score to see if the user won or lost
 function checkWinner() {
   if (lives === 0) {
-    $(".outcome").text("You lose");
-    $(".container").attr("class", "hidden");
-    $(".restart").removeClass("hidden");
-    $(".lose")[0].play();
+    youLose();
   } else if (lives > 0 && score === 10) {
-    $(".outcome").text("You Win!");
-    $(".container").attr("class", "hidden");
-    $(".restart").removeClass("hidden");
-    $(".win")[0].play();
+    youWin();
   }
+}
+
+function youLose() {
+  $(".outcome").text("You lose");
+  $(".container").attr("class", "hidden");
+  $(".restart").removeClass("hidden");
+  $(".lose")[0].play();
+}
+
+function youWin() {
+  $(".outcome").text("You Win!");
+  $(".container").attr("class", "hidden");
+  $(".restart").removeClass("hidden");
+  $(".win")[0].play();
 }
 
 //restarts the game
