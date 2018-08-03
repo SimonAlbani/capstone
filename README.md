@@ -40,5 +40,5 @@ $(".circle").on("click", event => {
 });
 ```
 
-##Credits
+## Credits
 All images/sounds/names do not belong to me and are used solely for educational purposes.
